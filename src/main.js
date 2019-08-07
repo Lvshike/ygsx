@@ -4,7 +4,13 @@ import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
+
 import "./stylesheets/main.scss"
+
+import "swiper/dist/css/swiper.min.css"
+import axios from "axios"
+
+Vue.prototype.$http = axios;
 
 new Vue({
   router,
