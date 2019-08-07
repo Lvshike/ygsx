@@ -21,6 +21,7 @@
         align-items: center;
         left:0;
         top:0;
+        z-index: 11;
         i{
             margin:0.1rem;
             img{

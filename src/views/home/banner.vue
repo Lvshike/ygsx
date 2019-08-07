@@ -13,7 +13,6 @@
         width:100%;
         overflow: hidden;
         position: relative;
-        margin-top:0.49rem;
         .swiper-slide{
             background:rgb(236, 229, 229);
         }

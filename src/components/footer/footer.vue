@@ -16,6 +16,7 @@
         position: fixed;
         bottom: 0;
         left:0;
+        border-top: 1px solid #ccc;
         .iconfont{
             font-size: 0.2rem;
             color:rgb(102, 98, 98)

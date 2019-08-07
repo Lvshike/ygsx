@@ -23,16 +23,11 @@
 
 <script>
 export default {
-    data(){
-        return {
-            flag:true
-        }
-    },
     props:["txt", "mark", "name", "getSym"],
     methods:{
         get(){
             this.getSym(this.name)
-            this.$router.push("/" +this.name)
+            this.$router.push("/" + this.name)
         }
     }
 }

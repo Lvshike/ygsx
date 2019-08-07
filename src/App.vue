@@ -1,8 +1,7 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-    <!-- <btm></btm> -->
-  </div>
+    <div id="app">
+        <router-view></router-view>
+    </div>
 </template>
 
 <style lang="scss">
@@ -12,6 +11,7 @@
   }
 </style>
 <script>
+
 export default {
   components:{
   }
