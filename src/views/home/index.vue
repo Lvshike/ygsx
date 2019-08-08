@@ -48,6 +48,9 @@ export default {
     activated(){
         window.scrollTo(0, this.top)
         window.addEventListener("scroll", this.scr)
+    },
+    deactived(){
+        window.removeEventListener("scroll", this.scr)
     }
 }
 </script>
