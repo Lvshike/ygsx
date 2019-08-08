@@ -1,28 +1,28 @@
-export default {
-    null:{path:"/",redirect:"/home"},
-    home:{
-        name:"home",
-        path:"/home",
-        component:()=>import ("@/views/home/index")
-    },
-    group:{
-        name:"group",
-        path:"/group",
-        component:()=>import ("@/views/group/index")
-    },
-    eat:{
-        name:"eat",
-        path:"/eat",
-        component:()=>import ("@/views/eat/index")
-    },
-    cart:{
-        name:"cart",
-        path:"/cart",
-        component:()=>import ("@/views/cart/index")
-    },
-    mine:{
-        name:"mine",
-        path:"/mine",
-        component:()=>import ("@/views/mine/index")
-    },
-}
+import Vue from 'vue'
+import Router from 'vue-router'
+
+Vue.use(Router)
+import product from "./product"; 
+import detail from "./detail";//商品列表页
+import detailhtml from "./detailhtml";//商品详情页
+import cars from "./cars"
+export default new Router({
+  routes: [
+    {path:"/",redirect:"/"},
+    
+    product,detail,detailhtml,cars
+    // {
+    //   path: '/product',
+    //   name: 'product',
+    //   component: CategoryList
+    // },
+    // {
+    //   path: '/about',
+    //   name: 'about',
+    //   // route level code-splitting
+    //   // this generates a separate chunk (about.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
+    //   component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    // }
+  ]
+})
