@@ -1,4 +1,4 @@
-# project
+# eat
 
 ## Project setup
 ```

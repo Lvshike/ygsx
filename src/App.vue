@@ -1,18 +1,20 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-    <!-- <btm></btm> -->
-  </div>
+   <div id="app">
+      <router-view></router-view>
+      <!--  <Tabbar></Tabbar> -->
+      
+   </div>
 </template>
 
-<style lang="scss">
-  #app{
-    width: 100%;
-  }
+<style lang = "scss">
 </style>
+ 
 <script>
+/* import Tabbar from "@/components/Tabbar" */
 export default {
-  components:{
-  }
+ /*   components:{
+        Tabbar
+   } */
 }
 </script>
+
