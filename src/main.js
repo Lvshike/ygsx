@@ -11,8 +11,6 @@ import "swiper/dist/css/swiper.min.css"
 import axios from "axios"
 
 Vue.prototype.$http = axios;
-// Vue.filter("timer", (num)=>{
-  
 
 new Vue({
   router,

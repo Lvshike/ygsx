@@ -4,6 +4,7 @@
         <banner></banner>
         <cont></cont>
         <btm></btm>
+        <backtop :flag="flag"></backtop>
     </div>
 </template>
 <style lang="scss" scoped>
@@ -17,30 +18,37 @@ import btm from "../../components/footer/footer"
 import hder from "../../components/header/header"
 import banner from "./banner"
 import cont from "./content/content"
+import backtop from "./backTop"
 export default {
+    name:"home",
     data(){
         return {
-            top:"0"
+            top:"0",
+            flag:false
         }
     },
     components:{
-        btm, hder, banner, cont
+        btm, hder, banner, cont, backtop
     },
-    // methods:{
-    //     scroll(e){
-    //         this.top = document.documentElement.scrollTop || document.body.scrollTop;
-    //     }
-    // },
-     beforeRouteLeave(to,from,next){
+    methods:{
+        scr(e){
+            var top = document.documentElement.scrollTop||document.body.scrollTop;
+            if(top>=400 && !this.flag){
+                this.flag = true;
+            }else if(top < 400 && this.flag){
+                this.flag = false;
+            }
+        }
+    },
+
+    beforeRouteLeave(to,from,next){
         this.top = document.documentElement.scrollTop||document.body.scrollTop;
         next();
     },
     activated(){
         window.scrollTo(0, this.top)
-    },
-    // deactivated(){//离开被缓存的组建才会触发
-    //     window.removeEventListener("scroll",this.scroll)
-    // }
+        window.addEventListener("scroll", this.scr)
+    }
 }
 </script>
 

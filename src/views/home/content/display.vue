@@ -8,8 +8,8 @@
                 </dt>
                 <dd class="bold">{{item.title}}</dd>
                 <dd>
-                    <span class="fir">¥ {{item.price}}/</span>
-                    <span>{{item.num}}</span>
+                    <span class="fir">¥ {{item.price}}</span>
+                    <span>/{{item.num}}</span>
                     <span class="cart"></span>
                 </dd>
             </dl>
@@ -43,10 +43,15 @@
                 }
                 .bold{
                     font-weight: bold;
+                    width:90%;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis
                 }
                 dd{
                     line-height: 0.3rem;
                     padding-left:0.15rem;
+
                     .fir{
                         color:red;
                     }

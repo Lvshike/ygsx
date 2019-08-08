@@ -34,7 +34,7 @@ export default {
     },
     created(){
         new Swiper('.swiper-container', {
-            // autoplay: true,//可选选项，自动滑动
+            autoplay: true,//可选选项，自动滑动
             loop:true
         })
     }

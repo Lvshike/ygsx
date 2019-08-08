@@ -1,8 +1,10 @@
 <template>
     <div class="list-group">
         <div class="lg_box" v-for="item in lgs" :key="item.id">
-            <img :src="item.img" alt="">
-            <span>{{item.title}}</span>
+            <router-link to="/home/detail/555?title=hello">
+                <img :src="item.img" alt="">
+                <span>{{item.title}}</span>
+            </router-link>
         </div>
     </div>
 </template>

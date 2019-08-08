@@ -1,9 +1,9 @@
 <template>
-    <div class="tabbar" @click="get">
+    <router-link tag="div" :to="name" class="tabbar">
         <slot name="icon-normal" v-if="mark != name"></slot>
         <slot name="icon-active" v-else></slot>
         <span :class="(mark == name)?'active':''">{{txt}}</span>
-    </div>
+    </router-link>
 </template>
 <style lang="scss" scoped>
     .tabbar{
@@ -23,12 +23,11 @@
 
 <script>
 export default {
-    props:["txt", "mark", "name", "getSym"],
-    methods:{
-        get(){
-            this.getSym(this.name)
-            this.$router.push("/" + this.name)
-        }
-    }
+     props:{
+            txt:String,
+            mark:String,
+            name:String,
+            getMark:Function
+        },
 }
 </script>
