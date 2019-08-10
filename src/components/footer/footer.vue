@@ -1,24 +1,8 @@
 <template>
     <div class="footer">
-        <tabbar txt="首页" name="home" :mark="sym" :getSym="getSym">
-            <i slot="icon-normal" class="iconfont">&#xe686;</i>
-            <i slot="icon-active" class="iconfont active">&#xe641;</i>
-        </tabbar>
-        <tabbar txt="分类" name="group" :mark="sym" :getSym="getSym">
-            <i slot="icon-normal" class="iconfont">&#xe65e;</i>
-            <i slot="icon-active" class="iconfont active">&#xe6c4;</i>
-        </tabbar>
-        <tabbar txt="吃饭吧" name="eat" :mark="sym" :getSym="getSym">
-            <i slot="icon-normal" class="iconfont">&#xe642;</i>
-            <i slot="icon-active" class="iconfont active">&#xe642;</i>
-        </tabbar>
-        <tabbar txt="购物车" name="cart" :mark="sym" :getSym="getSym">
-            <i slot="icon-normal" class="iconfont">&#xe603;</i>
-            <i slot="icon-active" class="iconfont active">&#xe606;</i>
-        </tabbar>
-        <tabbar txt="我的" name="mine" :mark="sym" :getSym="getSym">
-            <i slot="icon-normal" class="iconfont">&#xe62b;</i>
-            <i slot="icon-active" class="iconfont active">&#xe61e;</i>
+        <tabbar :txt="item.txt" :name="item.name" :mark="mark"  v-for="item in list" :key="item.id">
+            <div slot="icon-normal" :class="['iconfont', item.normal]"></div>
+            <div slot="icon-active" :class="['iconfont', 'active', item.active]"></div>
         </tabbar>
     </div>
 </template>
@@ -27,13 +11,14 @@
         display: flex;
         justify-content: space-around;
         width:100%;
-        height:0.59rem;
+        height:0.49rem;
         background:#fff;
         position: fixed;
         bottom: 0;
         left:0;
+        border-top: 1px solid #ccc;
         .iconfont{
-            font-size: 0.3rem;
+            font-size: 0.2rem;
             color:rgb(102, 98, 98)
         }
         .active{
@@ -46,16 +31,18 @@ import tabbar from "./tabbar"
 export default {
     data(){
         return {
-            sym:this.$route.name
+            mark:this.$route.name,
+            list:[
+                    {id:"0", txt:"首页", name:"home", normal:"icon-home-link", active:"icon-home2f"},
+                    {id:"1", txt:"分类", name:"product", normal:"icon-fenlei", active:"icon-sortfenlei"},
+                    {id:"2", txt:"吃饭吧", name:"eat", normal:"icon-huoguo ", active:"icon-huoguo "},
+                    {id:"3", txt:"购物车", name:"cars", normal:"icon-icon01 ", active:"icon-gouwuche "},
+                    {id:"4", txt:"我的", name:"mine", normal:"icon-wode ", active:"icon-wode2"},
+                ]
         }
     },
     components:{
         tabbar,
-    },
-    methods:{
-        getSym(val){
-            this.sym = val
-        }
-    },
+    }
 }
 </script>

@@ -1,16 +1,20 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-    <!-- <btm></btm> -->
-  </div>
+    <div id="app">
+        <keep-alive include="home">
+          <router-view></router-view>
+        </keep-alive>
+    </div>
 </template>
 
 <style lang="scss">
   #app{
     width: 100%;
+    height:100%;
+    background:#fff;
   }
 </style>
 <script>
+
 export default {
   components:{
   }
